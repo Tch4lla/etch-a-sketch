@@ -13,16 +13,33 @@ const createBlocks = (numberOfRows, numberOfColumns) => {
     }
   }
 };
+// const addHoverClass = () => {
+//   const blocks = document.querySelectorAll('.block');
+//   blocks.forEach((block) =>
+//     block.addEventListener('mouseover', () => {
+//       const r = randomNumber();
+//       const b = randomNumber();
+//       const g = randomNumber();
+//       block.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+//     })
+//   );
+// };
+
 const addHoverClass = () => {
   const blocks = document.querySelectorAll('.block');
-  blocks.forEach((block) =>
-    block.addEventListener('mouseover', () => {
-      const r = randomNumber();
-      const b = randomNumber();
-      const g = randomNumber();
-      block.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-    })
-  );
+
+  const handleHover = (event) => {
+    const r = randomNumber();
+    const g = randomNumber();
+    const b = randomNumber();
+
+    event.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  };
+
+  blocks.forEach((block) => {
+    block.addEventListener('mouseover', handleHover);
+    block.addEventListener('touchstart', handleHover);
+  });
 };
 
 const clearBlocks = () => {
