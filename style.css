@@ -18,3 +18,14 @@
 .hover {
   background-color: black;
 }
+
+h1 {
+  text-align: center;
+}
+
+#button-container {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

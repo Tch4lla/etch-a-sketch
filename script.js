@@ -17,7 +17,10 @@ const addHoverClass = () => {
   const blocks = document.querySelectorAll('.block');
   blocks.forEach((block) =>
     block.addEventListener('mouseover', () => {
-      block.classList.add('hover');
+      const r = randomNumber();
+      const b = randomNumber();
+      const g = randomNumber();
+      block.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     })
   );
 };
@@ -33,6 +36,9 @@ const resetBlocks = () => {
   addHoverClass();
 };
 
+const randomNumber = () => {
+  return Math.floor(Math.random() * 256);
+};
 const reset = document.querySelector('#reset');
 reset.addEventListener('click', resetBlocks);
 
